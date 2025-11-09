@@ -36,9 +36,9 @@ hs_err_pid*
 *.ipr
 *.iws
 
-# Documentation generated files
-docs/
-javadoc/
+# Documentation generated files (keep docs/ for JavaDoc HTML)
+# docs/
+# javadoc/
 
 # Temporary files
 *.tmp

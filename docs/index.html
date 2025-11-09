@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html lang="id">
+<head>
+    <title>Sistem Penggajian Pegawai - Dokumentasi JavaDoc</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        .header { background-color: #2c3e50; color: white; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
+        .container { background-color: white; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .class-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .class-card { border: 1px solid #ddd; border-radius: 5px; padding: 15px; background-color: #f9f9f9; }
+        .class-name { color: #2c3e50; font-weight: bold; font-size: 18px; margin-bottom: 10px; }
+        .class-description { color: #555; margin-bottom: 10px; }
+        .methods { margin-top: 15px; }
+        .method { background-color: #ecf0f1; padding: 10px; margin: 5px 0; border-radius: 3px; }
+        .code { font-family: 'Courier New', monospace; background-color: #ecf0f1; padding: 2px 5px; border-radius: 3px; }
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sistem Penggajian Pegawai</h1>
+        <p>Dokumentasi JavaDoc - Sistem Manajemen Penggajian Pegawai</p>
+        <p><strong>Versi:</strong> 1.0 | <strong>Penulis:</strong> Dhimas Kurnia Putra Supriyadi</p>
+    </div>
+    
+    <div class="container">
+        <h2>Ringkasan Paket: main</h2>
+        <p>Paket ini berisi kelas-kelas inti untuk Sistem Manajemen Penggajian Pegawai. 
+        Sistem ini mengimplementasikan prinsip-prinsip Pemrograman Berorientasi Objek dengan pewarisan dan abstraksi 
+        untuk menangani berbagai jenis pegawai (Tetap, Kontrak, dan Mitra).</p>
+        
+        <div class="class-list">
+            
+            <div class="class-card">
+                <div class="class-name">🏛️ Anggota (Kelas Abstrak)</div>
+                <div class="class-description">
+                    <strong>Kelas dasar abstrak</strong> untuk semua jenis pegawai. Mendefinisikan atribut umum 
+                    dan metode abstrak yang harus diimplementasikan oleh kelas turunan.
+                </div>
+                <div class="methods">
+                    <div class="method">
+                        <strong>Konstruktor:</strong> <span class="code">Anggota(String nama, int lamaBekerja)</span><br>
+                        Menginisialisasi pegawai dengan nama dan lama bekerja dalam tahun.
+                    </div>
+                    <div class="method">
+                        <strong>Metode Abstrak:</strong> <span class="code">hitungGaji()</span> → <span class="code">Rincian</span><br>
+                        Harus diimplementasikan oleh kelas turunan untuk menghitung gaji spesifik.
+                    </div>
+                    <div class="method">
+                        <strong>Metode Abstrak:</strong> <span class="code">tampilkanInfo()</span> → <span class="code">void</span><br>
+                        Harus diimplementasikan untuk menampilkan informasi pegawai.
+                    </div>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-name">👔 Tetap (Pegawai Tetap)</div>
+                <div class="class-description">
+                    <strong>Implementasi pegawai tetap</strong> dengan gaji berdasarkan masa kerja dalam tahun. 
+                    Termasuk tunjangan dan paket benefit yang komprehensif.
+                </div>
+                <div class="methods">
+                    <div class="method">
+                        <strong>Konstruktor:</strong> <span class="code">Tetap(String nama, int lamaBekerja)</span><br>
+                        Membuat pegawai tetap dengan masa kerja yang ditentukan (dalam tahun).
+                    </div>
+                    <div class="method">
+                        <strong>Metode:</strong> <span class="code">hitungGaji()</span> → <span class="code">Rincian</span><br>
+                        Menghitung gaji bertingkat: &lt;5 tahun (5 juta), 5-10 tahun (7 juta), &gt;10 tahun (10 juta).
+                    </div>
+                    <div class="method">
+                        <strong>Metode:</strong> <span class="code">tampilkanInfo()</span> → <span class="code">void</span><br>
+                        Menampilkan detail pegawai tetap dan rincian gaji.
+                    </div>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-name">📄 Kontrak (Pegawai Kontrak)</div>
+                <div class="class-description">
+                    <strong>Pegawai kontrak</strong> dengan struktur gaji tetap. 
+                    Benefit terbatas namun pendapatan bulanan stabil tanpa memandang masa kerja.
+                </div>
+                <div class="methods">
+                    <div class="method">
+                        <strong>Konstruktor:</strong> <span class="code">Kontrak(String nama, int lamaBekerja)</span><br>
+                        Membuat pegawai kontrak dengan durasi kontrak yang ditentukan (dalam tahun).
+                    </div>
+                    <div class="method">
+                        <strong>Metode:</strong> <span class="code">hitungGaji()</span> → <span class="code">Rincian</span><br>
+                        Gaji tetap sebesar 4.000.000 rupiah dengan tunjangan yang dikurangi.
+                    </div>
+                    <div class="method">
+                        <strong>Metode:</strong> <span class="code">tampilkanInfo()</span> → <span class="code">void</span><br>
+                        Menampilkan informasi pegawai kontrak dan detail gaji tetap.
+                    </div>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-name">🤝 Mitra (Pegawai Mitra)</div>
+                <div class="class-description">
+                    <strong>Pegawai mitra</strong> dengan sistem upah harian. 
+                    Pengaturan kerja fleksibel dengan kompensasi berdasarkan kehadiran dan bonus.
+                </div>
+                <div class="methods">
+                    <div class="method">
+                        <strong>Konstruktor:</strong> <span class="code">Mitra(String nama, int lamaBekerja, int kehadiran)</span><br>
+                        Membuat mitra dengan masa kerja (tahun) dan kehadiran bulanan (hari per bulan).
+                    </div>
+                    <div class="method">
+                        <strong>Metode:</strong> <span class="code">hitungGaji()</span> → <span class="code">Rincian</span><br>
+                        Upah harian (200.000 rupiah) × hari kehadiran + bonus pengalaman.
+                    </div>
+                    <div class="method">
+                        <strong>Metode:</strong> <span class="code">tampilkanInfo()</span> → <span class="code">void</span><br>
+                        Menampilkan detail mitra termasuk kehadiran dan perhitungan upah.
+                    </div>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-name">💰 Rincian (Detail Gaji)</div>
+                <div class="class-description">
+                    <strong>Wadah data</strong> untuk hasil perhitungan gaji. 
+                    Menyimpan rincian detail komponen gaji untuk semua jenis pegawai.
+                </div>
+                <div class="methods">
+                    <div class="method">
+                        <strong>Konstruktor:</strong> <span class="code">Rincian(int gajiPokok, int tunjangan, int potongan, int total)</span><br>
+                        Membuat detail gaji dengan gaji pokok, tunjangan, potongan, dan total.
+                    </div>
+                    <div class="method">
+                        <strong>Getter Methods:</strong> <span class="code">getGajiPokok()</span>, <span class="code">getTunjangan()</span>, 
+                        <span class="code">getPotongan()</span>, <span class="code">getGajiTotal()</span><br>
+                        Metode akses untuk semua komponen gaji.
+                    </div>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-name">📋 Menu (Antarmuka Pengguna)</div>
+                <div class="class-description">
+                    <strong>Pengendali antarmuka pengguna</strong> dengan validasi input dan sistem menu. 
+                    Menyediakan antarmuka konsol interaktif untuk sistem penggajian.
+                </div>
+                <div class="methods">
+                    <div class="method">
+                        <strong>Metode:</strong> <span class="code">tampilkanMenu()</span> → <span class="code">void</span><br>
+                        Menampilkan pilihan menu utama untuk pemilihan jenis pegawai.
+                    </div>
+                    <div class="method">
+                        <strong>Metode:</strong> <span class="code">inputNama()</span> → <span class="code">String</span><br>
+                        Memvalidasi dan mengembalikan input nama pegawai.
+                    </div>
+                    <div class="method">
+                        <strong>Metode:</strong> <span class="code">inputLamaBekerja()</span> → <span class="code">int</span><br>
+                        Memvalidasi input lama bekerja dalam tahun (harus positif).
+                    </div>
+                    <div class="method">
+                        <strong>Metode:</strong> <span class="code">inputKehadiran()</span> → <span class="code">int</span><br>
+                        Memvalidasi input hari kehadiran per bulan (1-31 hari).
+                    </div>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-name">🚀 Main (Titik Masuk Aplikasi)</div>
+                <div class="class-description">
+                    <strong>Kelas aplikasi utama</strong> yang berisi titik masuk program. 
+                    Mengatur seluruh alur kerja perhitungan penggajian.
+                </div>
+                <div class="methods">
+                    <div class="method">
+                        <strong>Metode:</strong> <span class="code">main(String[] args)</span> → <span class="code">void</span><br>
+                        Titik masuk aplikasi dengan loop menu dan pemrosesan pegawai.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background-color: #ecf0f1; border-radius: 5px;">
+            <h3>📊 Arsitektur Sistem</h3>
+            <p><strong>Hierarki Pewarisan:</strong></p>
+            <div class="code" style="padding: 15px; background-color: white; border-radius: 5px;">
+                Anggota (Abstrak)<br>
+                ├── Tetap (Pegawai Tetap)<br>
+                ├── Kontrak (Pegawai Kontrak)<br>
+                └── Mitra (Pegawai Mitra)
+            </div>
+            
+            <p style="margin-top: 15px;"><strong>Fitur Utama:</strong></p>
+            <ul>
+                <li>🎯 <strong>Polimorfisme:</strong> Semua pegawai mengimplementasikan metode abstrak secara berbeda</li>
+                <li>🔒 <strong>Enkapsulasi:</strong> Field private dengan metode getter/setter public</li>
+                <li>📈 <strong>Desain Scalable:</strong> Mudah menambahkan jenis pegawai baru</li>
+                <li>✅ <strong>Validasi Input:</strong> Penanganan error komprehensif dan validasi data</li>
+                <li>📱 <strong>User-Friendly:</strong> Interface konsol interaktif dengan prompt yang jelas</li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 20px; text-align: center; color: #7f8c8d;">
+            <hr>
+            <p>Dokumentasi JavaDoc yang Dihasilkan | Sistem Penggajian Pegawai v1.1</p>
+            <p>© 2024 Dhimas Kurnia Putra Supriyadi | <a href="https://github.com/heydhimss/sistem-penggajian-pegawai">Repository GitHub</a></p>
+            <p><small>Terakhir diperbarui: November 2024</small></p>
+        </div>
+    </div>
+</body>
+</html>
